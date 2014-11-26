@@ -1,20 +1,22 @@
 class Proposal
+  attr_reader :title
 
-  def initialize
-    @buzz_words = ['jQuery']
+  def initialize(title, about)
+    @title = title
+    @about = about
   end
 
   def talk_name
-    "jQuery plugins are sweet"
+    "Uses of #{@title}?"
   end
 
-  def about
-    "Take a look: http://tutorialzine.com/2013/04/50-amazing-jquery-plugins/"
+  def details
+    @about
   end
 
 end
 
-p1 = Proposal.new
+p1 = Proposal.new("Phone gap", "PhoneGap is a free and open source framework that allows you to create mobile apps using standardized web APIs for the platforms you care about using HTML, CSS & the lovely JavaScript.")
 
 p p1.talk_name
-p p1.about
+p p1.details
